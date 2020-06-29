@@ -1,4 +1,4 @@
-const { description } = require('../../package');
+const { description } = require('../../package')
 
 module.exports = {
   /**
@@ -49,6 +49,28 @@ module.exports = {
         link: '/about/',
       },
     ],
+    categories: [
+      {
+        text: 'Books',
+        link: '/categories/books/',
+      },
+      {
+        text: 'business',
+        link: '/categories/business/',
+      },
+      {
+        text: 'frontend',
+        link: '/categories/frontend/',
+      },
+      {
+        text: 'healthcare',
+        link: '/categories/healthcare/',
+      },
+      {
+        text: 'technology',
+        link: '/categories/technology/',
+      },
+    ],
     sidebar: {
       '/guide/': [
         {
@@ -81,4 +103,4 @@ module.exports = {
       require('autoprefixer'),
     ],
   },
-};
+}

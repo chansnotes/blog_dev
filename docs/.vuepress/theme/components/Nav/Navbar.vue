@@ -1,6 +1,6 @@
 <template>
   <!-- Header -->
-  <header class="bg-white block border-b border-gray-300">
+  <header class="block border-b border-gray-300 bg-white">
     <div
       class="mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg"
     >
@@ -8,37 +8,41 @@
       <div class="flex w-full h-16 items-center justify-between px-5 mx-auto">
         <!-- NavBar Menu Icon & Title & Menu for Large screen -->
         <div class="flex items-center justify-start">
-        <button
-          @click="sidebar = !sidebar"
-          type="button"
-          class="hover:text-gray-300 focus:text-gray-300 focus:outline-none lg:mr-8"
-        >
-          <svg
-            class="fill-current w-5 h-8"
-            height="384pt"
-            viewBox="0 -53 384 384"
-            width="384pt"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            @click="$emit('toggle-sidebar')"
+            type="button"
+            class="hover:text-gray-500 focus:text-gray-500 focus:outline-none lg:mr-8"
           >
-            <path
-              d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
-            />
-            <path
-              d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
-            />
-            <path
-              d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
-            />
-          </svg>
-        </button>
-        <!-- Site Title for Large Screen size -->
-         <div class="hidden lg:inline mr-8">
-          <span class="font-semibold text-2xl">{{ $site.title }}</span>
-        </div>
-       <ul class="hidden lg:flex mt-0 px-5">
-          <li v-for="item in $site.themeConfig.nav" :key="item.text" class="pr-8 text-sm">
-              <router-link :to="item.link" > {{ item.text}} </router-link>
-          </li>
+            <svg
+              class="fill-current w-5 h-8"
+              height="384pt"
+              viewBox="0 -53 384 384"
+              width="384pt"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+              <path
+                d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+              <path
+                d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+            </svg>
+          </button>
+          <!-- Site Title for Large Screen size -->
+          <div class="hidden lg:inline mr-8">
+            <span class="font-semibold text-2xl">{{ $site.title }}</span>
+          </div>
+          <ul class="hidden lg:flex mt-0 px-5">
+            <li
+              v-for="item in $site.themeConfig.nav"
+              :key="item.text"
+              class="pr-8 text-sm"
+            >
+              <router-link :to="item.link"> {{ item.text }} </router-link>
+            </li>
           </ul>
         </div>
         <!-- Site Title for Small to Medium Screen size -->
@@ -70,18 +74,10 @@
           </g>
         </svg>
       </div>
-        </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {
-  props: {
-    sidebar: {
-      type: Boolean,
-      required: true
-    }
-  }
-};
+export default {}
 </script>

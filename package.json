@@ -22,7 +22,8 @@
     "@kawarimidoll/vuepress-plugin-tailwind": "^0.1.5",
     "eslint-config-vuepress": "^2.2.0",
     "prettier-config-vuepress": "^1.0.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "v-click-outside": "^3.0.1"
   },
   "prettier": "prettier-config-vuepress"
 }
