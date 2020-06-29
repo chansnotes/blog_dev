@@ -1,0 +1,28 @@
+{
+  "name": "myBlog_v2",
+  "version": "0.0.1",
+  "description": "Chan Tycoon&#39;s Blog v2",
+  "main": "layouts/Layout.vue",
+  "authors": {
+    "name": "Seokchan Yoo",
+    "email": "stargate0609@gmail.com"
+  },
+  "repository": "/myBlog_v2",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.3.1",
+    "@vuepress/plugin-medium-zoom": "^1.3.1",
+    "vuepress": "^1.3.1"
+  },
+  "dependencies": {
+    "@kawarimidoll/vuepress-plugin-tailwind": "^0.1.5",
+    "eslint-config-vuepress": "^2.2.0",
+    "prettier-config-vuepress": "^1.0.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "prettier": "prettier-config-vuepress"
+}
