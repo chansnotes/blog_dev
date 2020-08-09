@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('close-sidebar')" type="button">
+  <button @click="closeSidebar" type="button">
     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
       <path
         fill-rule="evenodd"
@@ -10,5 +10,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    closeSidebar() {
+      this.$emit('close-sidebar')
+    },
+  },
+}
 </script>

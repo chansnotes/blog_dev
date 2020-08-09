@@ -1,10 +1,13 @@
 const { description } = require('../../package')
+const path = require('path')
+
+console.log(path.resolve(__dirname))
 
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: '찬타이쿤',
+  title: '찬스브로의 기록노트',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -51,7 +54,7 @@ module.exports = {
     ],
     categories: [
       {
-        text: 'Books',
+        text: 'books',
         link: '/categories/books/',
       },
       {
@@ -59,8 +62,12 @@ module.exports = {
         link: '/categories/business/',
       },
       {
-        text: 'frontend',
-        link: '/categories/frontend/',
+        text: 'vue',
+        link: '/categories/vue/',
+      },
+      {
+        text: 'hbr',
+        link: '/categories/hbr',
       },
       {
         text: 'healthcare',
@@ -71,15 +78,6 @@ module.exports = {
         link: '/categories/technology/',
       },
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          title: 'Guide',
-          collapsable: false,
-          children: ['', 'using-vue'],
-        },
-      ],
-    },
   },
   extend: '@vuepress/theme-default',
   /**
@@ -88,12 +86,21 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    'vuepress-plugin-reading-time',
+
     // [
-    //   '@silvanite/tailwind',
+    //   '@vuepress/blog',
     //   {
-    //     purgecss: {
-    //       enabled: true,
-    //     },
+    //     directories: [
+    //       {
+    //         id: 'categories',
+    //         dirname: 'categories',
+    //         path: '/',
+    //         pagination: {
+    //           lengthPerPage: 2,
+    //         },
+    //       },
+    //     ],
     //   },
     // ],
   ],
@@ -102,5 +109,14 @@ module.exports = {
       require('tailwindcss')('./tailwind.config.js'),
       require('autoprefixer'),
     ],
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@alias': path.resolve(__dirname, 'images/'),
+        '@static': path.resolve(__dirname, 'assets/'),
+      },
+      extensions: ['.js', '.vue', '.json'],
+    },
   },
 }

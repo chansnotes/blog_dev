@@ -1,7 +1,7 @@
 {
   "name": "myBlog_v2",
   "version": "0.0.1",
-  "description": "Chan Tycoon&#39;s Blog v2",
+  "description": "ChansBro Blog v2",
   "main": "layouts/Layout.vue",
   "authors": {
     "name": "Seokchan Yoo",
@@ -15,15 +15,23 @@
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.3.1",
+    "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-medium-zoom": "^1.3.1",
-    "vuepress": "^1.3.1"
+    "vue-filter-date-format": "^1.3.1",
+    "vuepress": "^1.3.1",
+    "vuepress-plugin-reading-time": "^0.1.1"
   },
   "dependencies": {
+    "@geoffcodesthings/tailwind-md-base": "^1.1.0",
     "@kawarimidoll/vuepress-plugin-tailwind": "^0.1.5",
     "eslint-config-vuepress": "^2.2.0",
+    "hooper": "^0.3.4",
     "prettier-config-vuepress": "^1.0.0",
+    "swiper": "^6.0.4",
     "tailwindcss": "^1.4.6",
-    "v-click-outside": "^3.0.1"
+    "v-click-outside": "^3.0.1",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel-3d": "^0.2.0"
   },
   "prettier": "prettier-config-vuepress"
 }
