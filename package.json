@@ -1,5 +1,5 @@
 {
-  "name": "myBlog_v2",
+  "name": "ChansNotes",
   "version": "0.0.1",
   "description": "ChansNotes",
   "main": "layouts/Layout.vue",
@@ -7,7 +7,7 @@
     "name": "Seokchan Yoo",
     "email": "stargate0609@gmail.com"
   },
-  "repository": "/myBlog_v2",
+  "repository": "/chansnotes.github.io",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
@@ -27,9 +27,7 @@
     "@geoffcodesthings/tailwind-md-base": "^1.1.0",
     "@kawarimidoll/vuepress-plugin-tailwind": "^0.1.5",
     "eslint-config-vuepress": "^2.2.0",
-    "hooper": "^0.3.4",
     "prettier-config-vuepress": "^1.0.0",
-    "swiper": "^6.0.4",
     "tailwindcss": "^1.7.6",
     "v-click-outside": "^3.0.1",
     "vue-awesome-swiper": "^4.1.1",

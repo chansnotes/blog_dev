@@ -136,7 +136,7 @@
           <!-- Container for SNS icons -->
           <div class="flex w-full justify-between px-5 mt-8">
             <!-- Github Icon -->
-            <a href="https://github.com/chansbro">
+            <a href="https://github.com/chansnotes">
               <svg
                 id="regular"
                 class="fill-current w-6 h-6 mr-4 hover:text-gray-500"

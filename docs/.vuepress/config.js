@@ -24,6 +24,13 @@ module.exports = {
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
     ],
     [
+      'meta',
+      {
+        name: 'google-site-verification',
+        content: '5yGgQsz6AmtmdOtY2GraCmmslz9oVhKa_X4KLa8sl3A',
+      },
+    ],
+    [
       'link',
       {
         rel: 'apple-touch-icon',
