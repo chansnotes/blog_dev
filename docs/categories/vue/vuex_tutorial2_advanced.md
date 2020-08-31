@@ -1,30 +1,33 @@
 ---
-layout: posts 
-title: "[Vuex 뽀개기] (2) Vuex 모듈화하기"
-category: vuex
+layout: PostLayout
+title: '[Vuex 뽀개기] (2) Vuex 모듈화하기'
+category: vue
 read_time: true
 comments: true
+permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-13
 date: 2019-07-13
 sitemap:
-    changefreq: daily
-    priority: 1.0
-excerpt: "Vuex를 모듈화해서 사용하는 방법을 정리합니다."
+  changefreq: daily
+  priority: 1.0
+excerpt: 'Vuex를 모듈화해서 사용하는 방법을 정리합니다.'
 ---
 
 ![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
 
-> ### Vuex 공식문서를 참조하여 정리하였습니다. 
-----
+> ### Vuex 공식문서를 참조하여 정리하였습니다.
+
+---
 
 ## Module (모듈)
 
-* 일반적으로 Vuex store는 한개의 `store` 객체 안에 모든 상태들이 포함됨
-* 중/대형 규모의 복잡한 프로젝트에서 Vuex 저장소를 모듈로 분산해서 관리 가능
-    * 모든 모듈은 `state`, `getters`, `mutations`, `actions` 및 중첩된 모듈 포함 가능  
+- 일반적으로 Vuex store는 한개의 `store` 객체 안에 모든 상태들이 포함됨
+- 중/대형 규모의 복잡한 프로젝트에서 Vuex 저장소를 모듈로 분산해서 관리 가능
+  - 모든 모듈은 `state`, `getters`, `mutations`, `actions` 및 중첩된 모듈 포함 가능
 
 ### 모듈 폴더 구조
-* 아래의 폴더 구조는 Vuex 공식문서에서 추천하는 구조
+
+- 아래의 폴더 구조는 Vuex 공식문서에서 추천하는 구조
 
 ```bash
 .
@@ -37,17 +40,17 @@ excerpt: "Vuex를 모듈화해서 사용하는 방법을 정리합니다."
 ```
 
 ### 기본 사용법
-* module 파일을 작성하고, 안에 `state`, `getters`, `mutations`, `actions`을 정의
-* `index.js` 파일에서 사용하고자하는 모듈을 `Vuex.Store` 객체로 내보냄
+
+- module 파일을 작성하고, 안에 `state`, `getters`, `mutations`, `actions`을 정의
+- `index.js` 파일에서 사용하고자하는 모듈을 `Vuex.Store` 객체로 내보냄
 
 ```js
 // index.js
 export const store = new Vuex.Store({
-    modules: {
-        a: moduleA
-    }
+  modules: {
+    a: moduleA,
+  },
 })
-
 ```
 
 ```js
@@ -62,20 +65,22 @@ const moduleA = {
 ```
 
 ## Namespace (네임스페이스)
-* module안의 `getters`, `mutations`, `actions`들은 전역으로 등록이됨.
-    * 여러 모듈이 같은 이름으로 사용이 불가능하다는 말
-* `namespaced`를 통해 각 모듈이 독립적으로 사용되거나, 같은 이름으로 재사용되게 설정 가능
+
+- module안의 `getters`, `mutations`, `actions`들은 전역으로 등록이됨.
+  - 여러 모듈이 같은 이름으로 사용이 불가능하다는 말
+- `namespaced`를 통해 각 모듈이 독립적으로 사용되거나, 같은 이름으로 재사용되게 설정 가능
 
 ### 코드로 이해하기
 
 #### 틀린 방법
+
 ```js
 // 아래와 같이 모듈을 만들면, 에러가 발생함
 
 // moduleA.js
 const moduleA = {
     state: { ... },
-    mutations: { 
+    mutations: {
         save() {}
     }
 }
@@ -83,20 +88,21 @@ const moduleA = {
 // moduleB.js
 const moduleB = {
     state: { ... },
-    mutations: { 
+    mutations: {
         save() {}
     }
 }
 ```
 
 #### 올바른 방법
+
 ```js
 // namespaced를 통해서 각 모듈을 전역으로 등록안하고, 경로를 기반으로 네임스페이스 지정
 
 // moduleA.js
 const moduleA = {
     state: { ... },
-    mutations: { 
+    mutations: {
         save() {}
     },
     namespaced: true
@@ -105,7 +111,7 @@ const moduleA = {
 // moduleB.js
 const moduleB = {
     state: { ... },
-    mutations: { 
+    mutations: {
         save() {}
     },
     namespaced: true
@@ -113,17 +119,18 @@ const moduleB = {
 ```
 
 ## rootState와 rootGetters
-* 만약 moduleB에서 moduleA의 state 혹은 getter를 사용하려면 어떻게 해야 할까?
-* 3번째 인자로 `rootState`를, 4번째 인자로 `rootGetters`를 넣어주기
-    * `rootState`는 상태를 최상위로 올려보내고, `rootGetters`는 getter를 최상위로 올려보낸다고 보면됨
-* 마찬가지로 moduleB에서 상태를 변이시키거나 액션을 실행시켜 변화를 주려면, `dispatch`와 `commit`의 3번째 인자로 `{root:true}`를 전달
- 
+
+- 만약 moduleB에서 moduleA의 state 혹은 getter를 사용하려면 어떻게 해야 할까?
+- 3번째 인자로 `rootState`를, 4번째 인자로 `rootGetters`를 넣어주기
+  - `rootState`는 상태를 최상위로 올려보내고, `rootGetters`는 getter를 최상위로 올려보낸다고 보면됨
+- 마찬가지로 moduleB에서 상태를 변이시키거나 액션을 실행시켜 변화를 주려면, `dispatch`와 `commit`의 3번째 인자로 `{root:true}`를 전달
+
 ### 예시1: 전역으로 등록된 모듈의 state, getter 사용
 
 ```js
 // moduleA.js
 const moduleA = {
-    state: { 
+    state: {
         count: 0
      },
     getters: {
@@ -170,7 +177,7 @@ const moduleB = {
 ```js
 // moduleA.js
 const moduleA = {
-    state: { 
+    state: {
         count: 0
      },
     getters: {
@@ -196,12 +203,12 @@ const moduleB = {
 ```
 
 ## 동적으로 모듈 등록하기
-* Store 저장소가 생성된 후에 모듈을 등록이 가능!
-* `store.registerModule()`로 등록
-* `store.unreigsterModule()`로 제거
 
+- Store 저장소가 생성된 후에 모듈을 등록이 가능!
+- `store.registerModule()`로 등록
+- `store.unreigsterModule()`로 제거
 
-----
+---
 
 ## 마무리
 

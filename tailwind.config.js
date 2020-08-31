@@ -7,6 +7,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      screens: {
+        xs: '500px',
+      },
       width: {
         side: '320px',
         sideprofile: '344px',
@@ -16,11 +19,13 @@ module.exports = {
         articlelistimage: '180px',
         articlelistview: '680px',
         articlelistwidth: '460px',
+        smallimage: '80px',
       },
       maxWidth: {
         articlelistview: '680px',
         articlelistimage: '180px',
         postwidth: '768px',
+        about: '450px',
       },
       height: {
         half: '50%',
@@ -33,6 +38,10 @@ module.exports = {
         articlelistimage: '135px',
         footer: '200px',
         mdrecentpost: '220px',
+        smallimage: '72px',
+        topicList: '280px',
+        topicImage: '180px',
+        categoryList: '340px',
       },
       colors: {
         search: '#e8ebed',
@@ -40,6 +49,12 @@ module.exports = {
         quote: '#363636',
         post: '#222426',
         date: '#495057',
+        error: '#fafafa',
+        personalColor: '#0D2F59',
+        personalColor2: '#A4778B',
+        personalColor3: '#D4AA7D',
+        hr: '#dedede',
+        overlay: '#212529',
       },
       cursor: {
         grab: 'grab',
@@ -62,6 +77,9 @@ module.exports = {
       },
       lineHeight: {
         'extra-relaxed': '1.7',
+      },
+      fontSize: {
+        '7xl': '6rem',
       },
     },
     // Markdown Style Configuration
@@ -120,7 +138,6 @@ module.exports = {
         borderLeftWidth: defaultTheme.borderWidth[4],
         borderLeftColor: 'rgb(75, 145, 214)',
         fontWeight: defaultTheme.fontWeight.normal,
-        fontStyle: 'italic',
         marginTop: defaultTheme.spacing[8],
         marginBottom: defaultTheme.spacing[8],
         paddingLeft: defaultTheme.spacing[8],

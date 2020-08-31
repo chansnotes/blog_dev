@@ -17,11 +17,13 @@
 
       <div class="flex px-4 lg:px-0 items-center justify-between text-date">
         <div>
-          <span class="mr-2"
+          <span class="mr-2 text-sm md:text-base"
             >{{ formatDate(this.$page.frontmatter.date) }}
           </span>
           &#183;
-          <span class="ml-2">{{ this.$page.readingTime.text }} </span>
+          <span class="ml-2 text-sm md:text-base"
+            >{{ this.$page.readingTime.text }}
+          </span>
         </div>
       </div>
       <img
@@ -31,8 +33,62 @@
       />
     </div>
     <Content
-      class="markdown mx-auto mt-20 mb-0 px-4 lg:px-0 pb-5 max-w-full md:max-w-postwidth text-md md:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
+      class="markdown mx-auto mt-20 mb-0 px-4 lg:px-0 pb-12 max-w-full md:max-w-postwidth text-base md:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
     />
+    <div
+      class="mx-auto mt-8 px-4 lg:px-0 max-w-full md:max-w-postwidth object-fill"
+    >
+      <div class="flex flex-col md:flex-row justify-end items-center mb-12">
+        <a
+          v-if="previousArticle"
+          :href="previousArticle.path"
+          class="flex items-center w-full md:w-slide bg-gray-100 h-16 rounded px-4 mb-4 md:mb-0 cursor-pointer hover:bg-gray-200"
+        >
+          <svg
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            data-testid="arrow"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-10 inline fill-current mr-1 text-blue-600 transition-all duration-150 ease-in"
+            style="transform: rotate(270deg)"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+          </svg>
+          <div class="flex flex-col">
+            <div class="text-xs font-bold">이전글</div>
+            <div class="font-bold title-ellipsis">
+              {{ previousArticle.title }}
+            </div>
+          </div>
+        </a>
+        <a
+          v-if="nextArticle"
+          :href="nextArticle.path"
+          class="flex justify-end items-center w-full md:w-slide bg-gray-100 h-16 rounded md:ml-12 px-4 cursor-pointer hover:bg-gray-200"
+        >
+          <div class="flex flex-col">
+            <div class="ml-auto text-xs font-bold">다음글</div>
+            <div class="font-bold title-ellipsis">{{ nextArticle.title }}</div>
+          </div>
+          <svg
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            data-testid="arrow"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-10 inline fill-current mr-1 text-blue-600 transition-all duration-150 ease-in"
+            style="transform: rotate(90deg)"
+          >
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+          </svg>
+        </a>
+      </div>
+      <Disqus />
+    </div>
+
     <Footer />
   </div>
 </template>
@@ -51,6 +107,12 @@ export default {
     return {
       isSidebarOpen: false,
       isSearchbarOpen: false,
+      articleList: null,
+      currentCategory: null,
+      currentIndex: null,
+      postTitle: null,
+      nextArticle: null,
+      previousArticle: null,
     }
   },
   components: {
@@ -67,10 +129,12 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen
       this.$emit('toggle-sidebar', this.isSidebarOpen)
+      document.body.style.setProperty('overflow', 'hidden')
     },
     closeSidebar() {
       this.isSidebarOpen = false
       this.$emit('close-sidebar', this.isSidebarOpen)
+      document.body.style.removeProperty('overflow')
     },
     toggleSearchbar() {
       this.isSearchbarOpen = !this.isSearchbarOpen
@@ -88,28 +152,58 @@ export default {
       return formattedDate
     },
   },
-  watch: {
-    isSidebarOpen: {
-      immediate: true,
-      handler(isSidebarOpen) {
-        if (isSidebarOpen) {
-          document.body.style.setProperty('overflow', 'hidden')
-        } else document.body.style.removeProperty('overflow')
-      },
-    },
+  created() {
+    this.currentCategory = this.$page.frontmatter.category
+    this.postTitle = this.$page.title
+    this.articleList = this.$site.pages
+      .filter(p => {
+        return p.regularPath.indexOf('/categories/') >= 0
+      })
+      .filter(r => {
+        return r.relativePath !== 'categories/README.md'
+      })
+      .filter(t => {
+        return Object.keys(t.frontmatter).length > 1
+      })
+      .filter(i => {
+        return i.frontmatter.category === this.currentCategory
+      })
+      .sort((a, b) => {
+        let aDate = new Date(a.frontmatter.date).getTime()
+        let bDate = new Date(b.frontmatter.date).getTime()
+        let diff = aDate - bDate
+        if (diff < 0) return 1
+        if (diff > 0) return -1
+        return 0
+      })
+
+    this.currentIndex = this.articleList.findIndex(x => {
+      return x.title == this.postTitle
+    })
+
+    this.nextArticle = this.articleList[this.currentIndex - 1]
+    this.previousArticle = this.articleList[this.currentIndex + 1]
   },
-  mounted() {
-    console.log(this.$page)
-  },
+  mounted() {},
 }
 </script>
 
 <style scoped>
-.background-opaque {
-  background-color: black;
-  opacity: 50%;
-}
 .wordbreaking {
   word-break: keep-all;
+}
+.title-ellipsis {
+  max-width: 280px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.title-ellipsis-small {
+  max-width: 80%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 </style>

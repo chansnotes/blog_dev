@@ -11,7 +11,7 @@
           <button
             @click="$emit('toggle-sidebar')"
             type="button"
-            class="hover:text-gray-500 focus:text-gray-500 focus:outline-none lg:mr-8"
+            class="hover:text-gray-500 focus:text-gray-500 focus:outline-none lg:mr-6"
           >
             <svg
               class="fill-current w-5 h-8"
@@ -33,7 +33,9 @@
           </button>
           <!-- Site Title for Large Screen size -->
           <div class="hidden lg:inline mr-8">
-            <a class="font-semibold text-2xl" href="/">{{ $site.title }}</a>
+            <a class="flex items-center font-semibold text-2xl" href="/">
+              {{ $site.title }}</a
+            >
           </div>
           <ul class="hidden lg:flex mt-0 px-5">
             <li
@@ -47,7 +49,7 @@
         </div>
         <!-- Site Title for Small to Medium Screen size -->
         <div class="px-2 lg:hidden">
-          <a class="font-semibold text-2xl" href="/">{{ $site.title }}</a>
+          <a class="font-semibold text-2xl" href="/"> {{ $site.title }}</a>
         </div>
         <!-- Search Icon -->
         <button @click="$emit('toggle-searchbar')" type="button">
@@ -80,6 +82,4 @@
   </header>
 </template>
 
-<script>
-export default {}
-</script>
+<script></script>

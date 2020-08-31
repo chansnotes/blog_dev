@@ -7,29 +7,35 @@
       id="left-panel"
       class="flex flex-col w-full lg:w-1/2 md:h-recentpost lg:h-full px-5"
     >
-      <img
-        class="w-full md:h-profile lg:h-half object-cover"
-        src="./test.png"
-        alt="chansnote"
-      />
-      <div class="h-full mb-8 md:mb-0 md:h-mdrecentpost lg:h-half">
-        <div class="text-md md:text-lg mx-1 mt-2 opacity-excerpt">
+      <a :href="this.firstArticle.path">
+        <img
+          class="w-full md:h-profile lg:h-topicList object-cover"
+          :src="this.firstArticle.frontmatter.thumbnail"
+          alt="chansnote"
+        />
+      </a>
+      <div class="h-full mb-8 md:mb-0 md:h-mdrecentpost lg:h-topicList">
+        <div class="text-sm md:text-lg lg:text-base mx-1 mt-2 opacity-excerpt">
           {{ this.firstArticle.frontmatter.category }}
         </div>
-        <div
-          class="title-ellipsis font-bold text-2xl md:text-3xl lg:text-4xl leading-tight mx-1"
-        >
-          {{ this.firstArticle.frontmatter.title }}
-        </div>
+        <a :href="this.firstArticle.path">
+          <div
+            class="title-ellipsis font-bold text-2xl md:text-3xl lg:text-4xl leading-tight mx-1"
+          >
+            {{ this.firstArticle.frontmatter.title }}
+          </div>
+        </a>
         <div class="text-xs md:text-sm mx-1 mt-2 opacity-excerpt">
           {{ this.formatDate(this.firstArticle.frontmatter.date) }} &#183;
           {{ this.firstArticle.readingTime.text }}
         </div>
-        <div
-          class="excerpt-ellipsis-md lg:excerpt-ellipsis-lg text-sm md:text-md mx-1 mt-2 opacity-excerpt"
-        >
-          {{ this.firstArticle.frontmatter.excerpt }}
-        </div>
+        <a :href="this.firstArticle.path">
+          <div
+            class="excerpt-ellipsis-md lg:excerpt-ellipsis-lg text-sm md:text-base mx-1 mt-2 opacity-excerpt"
+          >
+            {{ this.firstArticle.frontmatter.excerpt }}
+          </div>
+        </a>
       </div>
     </section>
 
@@ -39,28 +45,34 @@
       class="flex flex-col sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-6 w-full lg:w-1/2 h-full px-5"
     >
       <article v-for="article in topFiveArticles">
-        <img
-          class="w-full lg:w-sm_article sm:h-mdrecentpost lg:h-sm_article"
-          src="/images/etc/quote_sky.jpg"
-          alt="test"
-        />
-        <div class="text-md sm:text-sm mx-1 mt-2 opacity-excerpt">
+        <a :href="article.path">
+          <img
+            class="w-full lg:w-sm_article sm:h-mdrecentpost lg:h-sm_article"
+            :src="article.frontmatter.thumbnail"
+            alt="test"
+          />
+        </a>
+        <div class="text-sm sm:text-xs mx-1 mt-2 opacity-excerpt">
           {{ article.frontmatter.category }}
         </div>
-        <div
-          class="title-ellipsis sm:title-ellipsis-md font-bold text-2xl sm:text-xl leading-tight mx-1"
-        >
-          {{ article.frontmatter.title }}
-        </div>
+        <a :href="article.path">
+          <div
+            class="title-ellipsis sm:title-ellipsis-md font-bold text-2xl sm:text-xl leading-tight mx-1"
+          >
+            {{ article.frontmatter.title }}
+          </div>
+        </a>
         <div class="text-xs mx-1 mt-1 opacity-excerpt">
           {{ formatDate(article.frontmatter.date) }} &#183;
           {{ article.readingTime.text }}
         </div>
-        <div
-          class="excerpt-ellipsis-md mb-8 sm:mb-0 text-sm sm:text-xs mx-1 mt-2 lg:hidden opacity-excerpt"
-        >
-          {{ article.frontmatter.excerpt }}
-        </div>
+        <a :href="article.path">
+          <div
+            class="excerpt-ellipsis-md mb-8 sm:mb-0 text-sm sm:text-xs mx-1 mt-2 lg:hidden opacity-excerpt"
+          >
+            {{ article.frontmatter.excerpt }}
+          </div>
+        </a>
       </article>
     </section>
   </div>
@@ -68,9 +80,15 @@
 
 <script>
 export default {
+  props: {
+    topFiveArticles: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
-      topFiveArticles: null,
+      // topFiveArticles: null,
       firstArticle: null,
     }
   },
@@ -88,34 +106,8 @@ export default {
     },
   },
   created() {
-    // Fetch pages data from this.$site.pages
-    // Filter out README pages and others by selecting '/categories/' folder pages only
-    // Sort all pages by the most recent date
-    // Slice out to retrieve only top 5 pages from the date-sorted pages
-    this.topFiveArticles = this.$site.pages
-      .filter(p => {
-        return p.path.indexOf('/categories/') >= 0
-      })
-      .filter(r => {
-        return r.relativePath !== 'categories/README.md'
-      })
-      .filter(t => {
-        return Object.keys(t.frontmatter).length !== 0
-      })
-      .sort((a, b) => {
-        let aDate = new Date(a.frontmatter.date).getTime()
-        let bDate = new Date(b.frontmatter.date).getTime()
-        let diff = aDate - bDate
-        if (diff < 0) return 1
-        if (diff > 0) return -1
-        return 0
-      })
-      .slice(0, 5)
-
-    // console.log(this.topFiveArticles)
     // Shift out the 1st element from the Array
     this.firstArticle = this.topFiveArticles.shift()
-    // console.log(this.firstArticle)
   },
 }
 </script>

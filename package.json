@@ -1,7 +1,7 @@
 {
   "name": "myBlog_v2",
   "version": "0.0.1",
-  "description": "ChansBro Blog v2",
+  "description": "ChansNotes",
   "main": "layouts/Layout.vue",
   "authors": {
     "name": "Seokchan Yoo",
@@ -17,8 +17,10 @@
     "@vuepress/plugin-back-to-top": "^1.3.1",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-medium-zoom": "^1.3.1",
+    "@vuepress/plugin-search": "^1.5.4",
     "vue-filter-date-format": "^1.3.1",
     "vuepress": "^1.3.1",
+    "vuepress-plugin-fulltext-search": "^2.0.5",
     "vuepress-plugin-reading-time": "^0.1.1"
   },
   "dependencies": {
@@ -28,10 +30,12 @@
     "hooper": "^0.3.4",
     "prettier-config-vuepress": "^1.0.0",
     "swiper": "^6.0.4",
-    "tailwindcss": "^1.4.6",
+    "tailwindcss": "^1.7.6",
     "v-click-outside": "^3.0.1",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-carousel-3d": "^0.2.0"
+    "vue-carousel-3d": "^0.2.0",
+    "vue-scroll-loader": "^2.2.0",
+    "vuepress-plugin-disqus": "^0.2.0"
   },
   "prettier": "prettier-config-vuepress"
 }

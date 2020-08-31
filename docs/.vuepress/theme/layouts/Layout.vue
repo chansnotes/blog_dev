@@ -6,10 +6,10 @@
     />
     <Searchbar :searchbar="isSearchbarOpen" />
     <Sidebar :sidebar="isSidebarOpen" @close-sidebar="closeSidebar" />
-    <Quote />
-    <RecentArticle />
+    <Quote :quotes-list="quotesList" />
+    <RecentArticle :top-five-articles="topFiveArticles" />
     <ArticleList :full-list="articleList" :category-list="categoryList" />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 <script>
@@ -28,6 +28,9 @@ export default {
       isSidebarOpen: false,
       isSearchbarOpen: false,
       articleList: null,
+      topFiveArticles: null,
+      quotesList: null,
+      categoryList: null,
     }
   },
   components: {
@@ -44,33 +47,28 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen
       this.$emit('toggle-sidebar', this.isSidebarOpen)
+      document.body.style.setProperty('overflow', 'hidden')
     },
     closeSidebar() {
       this.isSidebarOpen = false
       this.$emit('close-sidebar', this.isSidebarOpen)
+      document.body.style.removeProperty('overflow')
     },
     toggleSearchbar() {
       this.isSearchbarOpen = !this.isSearchbarOpen
       this.$emit('toggle-searchbar', this.isSearchbarOpen)
     },
   },
-  watch: {
-    isSidebarOpen: {
-      immediate: true,
-      handler(isSidebarOpen) {
-        if (isSidebarOpen) {
-          document.body.style.setProperty('overflow', 'hidden')
-        } else document.body.style.removeProperty('overflow')
-      },
-    },
-  },
   mounted() {
-    console.log(this.$site)
+    // console.log(this.$site)
   },
   created() {
     this.articleList = this.$site.pages
       .filter(p => {
-        return p.path.indexOf('/categories/') >= 0
+        return p.regularPath.indexOf('/categories/') >= 0
+      })
+      .filter(r => {
+        return r.relativePath !== 'categories/README.md'
       })
       .filter(t => {
         return Object.keys(t.frontmatter).length > 1
@@ -83,10 +81,11 @@ export default {
         if (diff > 0) return -1
         return 0
       })
-      .slice(5)
 
-    // Get Category list from config.js file
+    this.topFiveArticles = this.articleList.slice(0, 5)
+    this.articleList = this.articleList.slice(5)
     this.categoryList = this.$site.themeConfig.categories
+    this.quotesList = this.$site.themeConfig.quotes
   },
 }
 </script>

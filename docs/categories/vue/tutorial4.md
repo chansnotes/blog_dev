@@ -1,10 +1,12 @@
 ---
 layout: PostLayout
 title: 'Vue.js 뽀개기 (4) 조건문과 반복문'
-thumbnail: '/images/vue/logo.jpeg'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/logo.jpeg'
 read_time: true
 comments: true
+permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-05-07
 date: 2019-05-07
 excerpt: 'Vue에서는 조건문과 반복문을 어떻게 사용하는지에 대해 정리한 글입니다.'

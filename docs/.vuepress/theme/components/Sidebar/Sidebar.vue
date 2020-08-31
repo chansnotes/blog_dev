@@ -5,16 +5,16 @@
         class="fixed flex flex-col w-side h-screen border shadow-2xl bg-white overflow-y-auto ease-in-out transition-all duration-300"
       >
         <!-- Title Box -->
-        <div class="flex h-16 p-5 items-center justify-between border-b border-gray-300">
+        <div class="flex h-16 p-4 items-center border-b border-gray-300">
           <span class="font-semibold text-2xl">{{ $site.title }}</span>
-          <CloseButton @close-sidebar="$emit('close-sidebar')" />
+          <CloseButton
+            @close-sidebar="$emit('close-sidebar')"
+            class="ml-auto"
+          />
         </div>
         <!-- Contents Box -->
-        <SidebarMenu />
-        <!-- Recent Posts -->
-        <SidebarRecentPosts />
-        <!-- Profile Box -->
         <SidebarProfile />
+        <SidebarMenu />
       </div>
     </div>
   </aside>

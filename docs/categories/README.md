@@ -1,7 +1,3 @@
 ---
-layout: Category
+layout: CategoryListLayout
 ---
-
-asdsdas
-
-- this is shit

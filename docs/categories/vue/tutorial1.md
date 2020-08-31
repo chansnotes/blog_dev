@@ -1,10 +1,12 @@
 ---
 layout: PostLayout
 title: 'Vue.js 뽀개기 (1) 개발환경 설정'
-thumbnail: '/images/vue/logo.jpeg'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/logo.jpeg'
 read_time: true
 comments: true
+permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-04-30
 date: 2019-04-30
 excerpt: 'Vue 개발환경 설정하는 법에 대해 정리한 글입니다.'

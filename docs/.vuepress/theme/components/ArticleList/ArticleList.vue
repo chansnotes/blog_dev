@@ -1,21 +1,26 @@
 <template>
   <div
-    class="flex mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg h-recentpost mt-0 md:mt-8"
+    class="flex mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg h-full mt-0 md:mt-8"
   >
-    <div class="flex flex-col max-w-articlelistview w-full h-screen pr-6">
-      <article v-for="article in sortedList" class="flex w-full mb-10 pl-1">
-        <div class="flex flex-col w-articlelistwidth h-articlelistimage mr-6">
+    <div class="flex flex-col w-full lg:max-w-articlelistview h-full lg:pr-6">
+      <article
+        v-for="article in sortedList"
+        class="flex max-w-full w-full mb-8 p-5 animate_fadeinup"
+      >
+        <div
+          class="flex flex-col w-full lg:w-articlelistwidth h-articlelistimage mr-6"
+        >
           <div class="text-sm mx-1 opacity-excerpt">
             {{ article.frontmatter.category }}
           </div>
           <a :href="article.path">
             <div
-              class="title-ellipsis font-bold text-2xl leading-tight mx-1 cursor-pointer"
+              class="title-ellipsis font-bold text-lg md:text-2xl leading-tight mx-1 cursor-pointer"
             >
               {{ article.frontmatter.title }}
             </div>
           </a>
-          <div class="text-sm mx-1 mt-1 opacity-excerpt">
+          <div class="text-xs md:text-sm mx-1 mt-1 opacity-excerpt">
             {{ formatDate(article.frontmatter.date) }} &#183;
             {{ article.readingTime.text }}
           </div>
@@ -27,26 +32,37 @@
             </div>
           </a>
         </div>
-        <div>
-          <a :href="article.path">
-            <img
-              v-if="article.frontmatter.thumbnail"
-              class="w-articlelistimage h-articlelistimage cursor-pointer"
-              :src="article.frontmatter.thumbnail"
-              alt="thumbnail"
-            />
-            <div
-              v-else
-              class="w-articlelistimage h-articlelistimage bg-red-300"
-            ></div>
-          </a>
+        <div
+          class="flex flex-col h-articlelistimage justify-center items-center xs:flex-none"
+        >
+          <div
+            class="w-smallimage h-half xs:w-articlelistimage xs:h-full cursor-pointer"
+          >
+            <a :href="article.path">
+              <img
+                v-if="article.frontmatter.thumbnail"
+                class="w-full h-full"
+                :src="article.frontmatter.thumbnail"
+                alt="thumbnail"
+              />
+              <img
+                v-else
+                class="w-full h-full"
+                src="/images/etc/quote_sky.jpg"
+                alt="thumbnail"
+              />
+            </a>
+          </div>
         </div>
       </article>
+      <div v-if="isLoading" class="flex justify-center items-center">
+        <Loader :size="24" :color="'red'" :intensity="300" />
+      </div>
     </div>
     <!-- Sidebar Container -->
-    <aside class="hidden lg:flex lg:flex-col w-sideprofile h-screen px-3">
+    <aside class="hidden lg:flex lg:flex-col w-sideprofile h-full px-3 mb-24">
       <!-- Author Profile Component -->
-      <div class="flex flex-col px-4 mb-8 items-center h-profile">
+      <div class="flex flex-col px-4 mb-4 items-center h-profile">
         <div class="title-block-wrap mb-8">
           <span class="font-bold text-sm px-2 py-1 border border-gray-300"
             >글쓴이</span
@@ -55,12 +71,14 @@
         <div class="block w-auto h-auto">
           <img
             class="w-32 h-32 rounded-full shadow-inner"
-            src="./me.jpeg"
+            src="/images/etc/me.jpeg"
             alt="chansnote"
           />
         </div>
         <div class="flex flex-col mt-5 items-center">
-          <span class="font-bold text-md">찬스브로(SEOKCHAN YOO)</span>
+          <span class="font-bold text-base"
+            >{{ $site.title }} (Seokchan Yoo)</span
+          >
           <span class="text-xs mt-1 text-gray-700"
             >사업기획자 &#183; 바이오 엔지니어</span
           >
@@ -68,9 +86,10 @@
             헬스케어 / 농업기술 / IT기술에 관심이 많은 엔지니어이자 유탄이의
             큰형님
           </span>
+
           <a
             href="mailto:stargate0609@gmail.com"
-            class="inline-flex justify-center items-center w-full h-12 mt-4 bg-blue-600 rounded text-white hover:bg-blue-700 shadow"
+            class="inline-flex justify-center items-center w-full h-12 mt-4 bg-personalColor rounded text-white hover:bg-blue-800 shadow"
           >
             <svg
               class="fill-current w-5 h-8 mr-2"
@@ -120,7 +139,7 @@
             <a href="https://github.com/chansbro">
               <svg
                 id="regular"
-                class="fill-current w-8 h-8 mr-4 hover:text-gray-500"
+                class="fill-current w-6 h-6 mr-4 hover:text-gray-500"
                 viewBox="0 0 512 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -133,7 +152,7 @@
             <a href="https://www.linkedin.com/in/seokchan-yoo-7553a7193/">
               <svg
                 id="regular"
-                class="fill-current w-8 h-8 mr-4 hover:text-gray-500"
+                class="fill-current w-6 h-6 mr-4 hover:text-gray-500"
                 enable-background="new 0 0 24 24"
                 height="512"
                 viewBox="0 0 24 24"
@@ -154,7 +173,7 @@
             <!-- RSS Icon -->
             <svg
               id="regular"
-              class="fill-current w-8 h-8 hover:text-gray-500"
+              class="fill-current w-6 h-6 hover:text-gray-500"
               enable-background="new 0 0 24 24"
               height="512"
               viewBox="0 0 24 24"
@@ -181,6 +200,7 @@
             >카테고리</span
           >
         </div>
+
         <div class="w-full">
           <nav v-for="category in categoryList" class>
             <div
@@ -188,28 +208,15 @@
               class="flex justify-between items-center p-1 mb-4 cursor-pointer border border-gray-300 rounded hover:bg-gray-100"
             >
               <span class="p-2">
-                {{ categoryParser(category.text) }}
+                <!-- {{ categoryParser(category.text) }} -->
+                {{ category.text }}
               </span>
               <span class="text-xs ml-auto py-1 px-2 bg-gray-200 rounded">
-                {{ getNumberOfPages(category.link) }}
+                {{ getNumberOfPages(category) }}
               </span>
             </div>
           </nav>
         </div>
-        <!-- <div class="w-full">
-          <nav v-for="category in categoryList" class>
-            <a :href="category.link">
-              <div
-                class="flex justify-between items-center p-1 mb-4 cursor-pointer border border-gray-300 rounded hover:bg-gray-100"
-              >
-                <span class="p-2">{{ categoryParser(category.text) }}</span>
-                <span class="text-xs ml-auto py-1 px-2 bg-gray-200 rounded">
-                  {{ getNumberOfPages(category.link) }}
-                </span>
-              </div>
-            </a>
-          </nav>
-        </div> -->
       </div>
     </aside>
   </div>
@@ -217,6 +224,7 @@
 
 <script>
 import AuthorBlock from '../AuthorBlock/AuthorBlock'
+import Loader from '../Loader/Loader'
 
 export default {
   props: {
@@ -232,10 +240,19 @@ export default {
   data() {
     return {
       sortedList: null,
+      sortedListFull: null,
+      originalList: null,
+      totalPages: null,
+      totalItems: null,
+      currentPage: 1,
+      currentCategory: null,
+      isLoading: false,
+      debounce: true,
     }
   },
   components: {
     AuthorBlock,
+    Loader,
   },
   methods: {
     formatDate(date) {
@@ -249,41 +266,78 @@ export default {
         '일'
       return formattedDate
     },
-    categoryParser(category) {
-      if (category === 'books') {
-        return '독서기록'
-      } else if (category === 'healthcare') {
-        return '헬스케어'
-      } else if (category === 'technology') {
-        return '최신기술'
-      } else if (category === 'business') {
-        return '사업관련'
-      } else if (category === 'vue') {
-        return 'Vue 정리'
-      } else if (category === 'hbr') {
-        return 'HBR강의'
-      } else {
-        return null
-      }
-    },
-    getNumberOfPages(link) {
+    getNumberOfPages(category) {
       let listofPages = this.$site.pages.filter(p => {
-        return p.path.indexOf(link) >= 0
+        return p.frontmatter.category === category.text
       })
-      //   console.log(listofPages.length)
       return listofPages.length
     },
     sortByCategory(category) {
-      this.sortedList = this.fullList.filter(p => {
+      this.currentCategory = category
+      this.currentPage = 1
+      this.totalItems = this.$site.pages.filter(p => {
         return p.frontmatter.category === category
-      })
-      console.log(this.sortedList)
+      }).length
+      this.totalPages = Math.ceil(this.totalItems / 10)
+
+      this.sortedListFull = this.$site.pages
+        .filter(p => {
+          return p.frontmatter.category === category
+        })
+        .sort((a, b) => {
+          let aDate = new Date(a.frontmatter.date).getTime()
+          let bDate = new Date(b.frontmatter.date).getTime()
+          let diff = aDate - bDate
+          if (diff < 0) return 1
+          if (diff > 0) return -1
+          return 0
+        })
+      this.sortedList = this.sortedListFull.slice(0, 10)
+    },
+    scroll() {
+      window.onscroll = () => {
+        let bottomOfWindow =
+          Math.max(
+            window.pageYOffset,
+            document.documentElement.scrollTop,
+            document.body.scrollTop
+          ) +
+            window.innerHeight ===
+          document.documentElement.offsetHeight
+
+        if (bottomOfWindow) {
+          if (this.currentPage < this.totalPages) {
+            this.isLoading = true
+            if (this.currentCategory) {
+              this.currentPage += 1
+              const _this = this
+              setTimeout(function() {
+                const endNum = 10 * _this.currentPage
+                _this.sortedList = _this.sortedListFull.slice(0, endNum)
+                _this.isLoading = false
+              }, 800)
+            } else {
+              this.currentPage += 1
+              const _this = this
+              setTimeout(function() {
+                const endNum = 10 * _this.currentPage
+                _this.sortedList = _this.fullList.slice(0, endNum)
+                _this.isLoading = false
+              }, 800)
+            }
+          }
+        }
+      }
     },
   },
   computed: {},
   created() {
-    this.sortedList = this.fullList
-    console.log(this.sortedList)
+    this.sortedList = this.fullList.slice(0, 10)
+    this.totalItems = this.fullList.length
+    this.totalPages = Math.ceil(this.totalItems / 10)
+  },
+  mounted() {
+    this.scroll()
   },
 }
 </script>
@@ -293,7 +347,7 @@ export default {
   max-width: 500px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 .excerpt-ellipsis {
@@ -318,5 +372,20 @@ export default {
   border-top: 1px solid #e9ecef;
   flex: 1 0 0;
   content: '';
+}
+.animate_fadeinup {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+  }
 }
 </style>
