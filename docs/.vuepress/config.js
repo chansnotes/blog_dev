@@ -210,6 +210,10 @@ module.exports = {
         text: '진정한 신뢰는 맹신이 아니라, 앎에서 나온다.',
         author: '<사업의 철학>의 저자 Michael Gerber',
       },
+      {
+        text: '인생이라는 게임은 인생의 목표를 반영한다.',
+        author: '<마스터 게임>의 저자 로버트 드 로프',
+      },
     ],
   },
   extend: '@vuepress/theme-default',

@@ -130,7 +130,9 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$site)
+    document.body.style.removeProperty('overflow')
+
+    // console.log(this.$site)
   },
   created() {
     this.topicList = [

@@ -4,7 +4,7 @@
     style="background-image: url(/images/etc/main.jpeg)"
   >
     <div
-      class="absolute w-full h-full top-0 left-0 bg-overlay opacity-excerpt"
+      class="absolute w-full h-full top-0 left-0 bg-overlay opacity-70"
     ></div>
     <div
       class="text-white text-base sm:text-lg md:text-xl lg:text-2xl text-center z-10"
@@ -25,10 +25,21 @@ export default {
       required: true,
     },
   },
+  // data() {
+  //   return {
+  //     selectRandomQuote: null,
+  //   }
+  // },
   computed: {
     selectRandomQuote: function() {
       return this.quotesList[Math.floor(Math.random() * this.quotesList.length)]
     },
   },
+  // created() {
+  //   this.selectRandomQuote = this.quotesList[
+  //     Math.floor(Math.random() * this.quotesList.length)
+  //   ]
+  //   console.log(this.selectRandomQuote)
+  // },
 }
 </script>

@@ -26,6 +26,7 @@ module.exports = {
         articlelistimage: '180px',
         postwidth: '768px',
         about: '450px',
+        lostList: '520px',
       },
       height: {
         half: '50%',

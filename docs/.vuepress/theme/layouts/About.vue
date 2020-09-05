@@ -58,8 +58,10 @@ export default {
       this.$emit('toggle-searchbar', this.isSearchbarOpen)
     },
   },
+  created() {},
   mounted() {
-    console.log(this.$site)
+    document.body.style.removeProperty('overflow')
+    // console.log(this.$site)
   },
 }
 </script>

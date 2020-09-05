@@ -60,6 +60,8 @@ export default {
     },
   },
   mounted() {
+    document.body.style.removeProperty('overflow')
+
     // console.log(this.$site)
   },
   created() {

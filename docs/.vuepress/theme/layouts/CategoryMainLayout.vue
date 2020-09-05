@@ -12,7 +12,7 @@
       style="background-image: url(/images/etc/books.jpg)"
     >
       <div
-        class="absolute w-full h-full top-0 left-0 bg-overlay opacity-excerpt"
+        class="absolute w-full h-full top-0 left-0 bg-overlay opacity-75"
       ></div>
       <div
         class="flex flex-col items-center justify-center mx-auto mb-2 px-4 lg:px-0 pb-8 max-w-full md:max-w-postwidth z-10"
@@ -192,7 +192,9 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() {
+    document.body.style.removeProperty('overflow')
+  },
   created() {
     const currentCategory = this.$site.themeConfig.categories.filter(p => {
       return p.link == this.$page.path

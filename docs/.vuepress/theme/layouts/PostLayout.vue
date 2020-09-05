@@ -38,7 +38,7 @@
     <div
       class="mx-auto mt-8 px-4 lg:px-0 max-w-full md:max-w-postwidth object-fill"
     >
-      <div class="flex flex-col md:flex-row justify-end items-center mb-12">
+      <div class="flex flex-col md:flex-row items-center mb-12">
         <a
           v-if="previousArticle"
           :href="previousArticle.path"
@@ -63,6 +63,7 @@
             </div>
           </div>
         </a>
+        <div v-else class="w-full md:w-slide"></div>
         <a
           v-if="nextArticle"
           :href="nextArticle.path"
@@ -184,7 +185,9 @@ export default {
     this.nextArticle = this.articleList[this.currentIndex - 1]
     this.previousArticle = this.articleList[this.currentIndex + 1]
   },
-  mounted() {},
+  mounted() {
+    document.body.style.removeProperty('overflow')
+  },
 }
 </script>
 
