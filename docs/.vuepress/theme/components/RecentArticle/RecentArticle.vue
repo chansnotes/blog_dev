@@ -107,6 +107,7 @@ export default {
   },
   created() {
     // Shift out the 1st element from the Array
+    // console.log(this.topFiveArticles)
     this.firstArticle = this.topFiveArticles.shift()
   },
 }

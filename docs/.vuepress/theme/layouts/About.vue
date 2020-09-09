@@ -10,7 +10,7 @@
       <img class="w-full" src="/images/etc/about.png" alt="Me Eating MEAT!" />
     </div>
     <Content
-      class="markdown mx-auto my-8 px-4 lg:px-0 pb-8 max-w-full md:max-w-postwidth text-base md:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
+      class="markdown mx-auto my-8 px-4 lg:px-0 pb-8 max-w-full md:max-w-postwidth text-sm md:text-base lg:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
     />
     <Footer />
   </div>
@@ -19,7 +19,6 @@
 import Navbar from '../components/Nav/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Searchbar from '../components/Nav/Searchbar'
-import SwiperComponent from '../components/Carousel/Swiper'
 import Quote from '../components/Quote/Quote'
 import RecentArticle from '../components/RecentArticle/RecentArticle'
 import ArticleList from '../components/ArticleList/ArticleList'
@@ -36,7 +35,6 @@ export default {
     Navbar,
     Sidebar,
     Searchbar,
-    SwiperComponent,
     Quote,
     RecentArticle,
     ArticleList,

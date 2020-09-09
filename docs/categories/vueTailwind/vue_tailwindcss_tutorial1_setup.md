@@ -13,6 +13,15 @@ sitemap:
   changefreq: daily
   exclude: false
 excerpt: '최근 Nuxt를 기반으로 개인 프로젝트를 진행하면서 배운 것들을 기록으로 남기고, 공유하기 위한 목적의 글입니다.'
+meta:
+  - name: 'og:title'
+    content: '나노포어 데이터 분석 원리'
+  - name: 'og:description'
+    content: '차세대 유전체 분석기술 중 3세대 기술로 알려진 Oxford Nanopore Technologies사의 나노포어 시퀀싱 데이터가 어떻게 저장되고 분석되는지에 대해 간단히 소개하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/thumbnail/thumbnail_vuetailwind.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/thumbnail/thumbnail_vuetailwind.jpeg'
 ---
 
 ## Vuetify 대신에 tailwindcss를 사용하게 된 계기
@@ -44,7 +53,7 @@ excerpt: '최근 Nuxt를 기반으로 개인 프로젝트를 진행하면서 배
 
 ## `tailwindcss` 간단 소개
 
-![tailwind trend](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/nuxt/trend.png?raw=true){: .align-center}
+![tailwind trend](https://chansnotes.github.io/images/tailwind/trend.png)
 
 `tailwindcss`를 간단히 소개하자면, 커스터마이즈 성향이 매우 강한 low-level 수준의 CSS 프레임워크라고 생각하시면 됩니다.
 좀 더 쉽게 풀자면, 기존에 CSS style 태그에서 id 혹은 class 속성으로 지정하여 디자인을 해야하던 귀찮음을 없애주는 좋은 친구입니다 :)

@@ -148,7 +148,8 @@ module.exports = {
         color: 'rgb(33,37,41)',
         backgroundColor: 'rgb(248,249,250)',
         fontSize: defaultTheme.fontSize.lg,
-        borderRadius: '4px',
+        fontStyle: 'normal',
+        borderRadius: 0,
         p: {
           margin: 0,
         },

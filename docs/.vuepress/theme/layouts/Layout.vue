@@ -16,7 +16,6 @@
 import Navbar from '../components/Nav/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Searchbar from '../components/Nav/Searchbar'
-import SwiperComponent from '../components/Carousel/Swiper'
 import Quote from '../components/Quote/Quote'
 import RecentArticle from '../components/RecentArticle/RecentArticle'
 import ArticleList from '../components/ArticleList/ArticleList'
@@ -37,7 +36,6 @@ export default {
     Navbar,
     Sidebar,
     Searchbar,
-    SwiperComponent,
     Quote,
     RecentArticle,
     ArticleList,

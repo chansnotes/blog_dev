@@ -48,7 +48,7 @@
               <img
                 v-else
                 class="w-full h-full"
-                src="/images/etc/quote_sky.jpg"
+                src="/images/thumbnail/default-image.png"
                 alt="thumbnail"
               />
             </a>

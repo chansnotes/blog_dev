@@ -125,6 +125,7 @@ module.exports = {
         description:
           'Udemy 강의와 여러 문서들을 읽고 공부한 내용을 공유합니다.',
         thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        cover: '/images/cover/coding.jpg',
       },
       {
         text: 'vueRTC',
@@ -133,12 +134,14 @@ module.exports = {
         description:
           '미니 프로젝트로 만든 IoT 장치에 적용하기 위해 공부했었던 webRTC를 Vue에 접목시키면서 공부했던 내용을 공유합니다.',
         thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        cover: '/images/cover/coding.jpg',
       },
       {
         text: 'vueTailwind',
         link: '/categories/vueTailwind/',
         topic: '코딩/IoT',
         thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        cover: '/images/cover/coding.jpg',
       },
       // {
       //   text: 'HBR',
@@ -152,6 +155,7 @@ module.exports = {
         description:
           '3세대 시퀀싱 기술인 나노포어 시퀀싱 기술에 대해 설명합니다.',
         thumbnail: '',
+        cover: '/images/cover/sample.png',
       },
       {
         text: '스탠포드 스타트업 강의',
@@ -160,6 +164,16 @@ module.exports = {
         description:
           'Stanford 대학교에서 진행한 <How to start a startup> 강의를 듣고 내용을 정리합니다.',
         thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        cover: '/images/cover/startup.jpg',
+      },
+      {
+        text: '부린이 탈출기',
+        link: '/categories/real-estate/',
+        topic: '재테크',
+        description:
+          '부린이(부동산+어린이)를 탈출하기 위해, 공부한 지식들을 정리하여 공유합니다.',
+        thumbnail: '/images/thumbnail/real-estate.jpeg',
+        cover: '/images/cover/finance.jpeg',
       },
       // {
       //   text: '회고록',
@@ -224,6 +238,12 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
     'vuepress-plugin-reading-time',
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+      },
+    ],
     ['disqus', { shortname: 'chansbro' }],
     [
       '@vuepress/blog',

@@ -9,7 +9,10 @@
     <!-- Header Image and Title -->
     <header
       class="flex flex-col relative justify-center items-center w-full h-profile px-5 bg-cover bg-scroll"
-      style="background-image: url(/images/etc/books.jpg)"
+      :style="{
+        'background-image': `url(${this.categoryCover})`,
+        'background-position': 'center',
+      }"
     >
       <div
         class="absolute w-full h-full top-0 left-0 bg-overlay opacity-75"
@@ -103,7 +106,6 @@
 import Navbar from '../components/Nav/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Searchbar from '../components/Nav/Searchbar'
-import SwiperComponent from '../components/Carousel/Swiper'
 import Quote from '../components/Quote/Quote'
 import RecentArticle from '../components/RecentArticle/RecentArticle'
 import ArticleList from '../components/ArticleList/ArticleList'
@@ -117,6 +119,7 @@ export default {
       articleList: null,
       categoryName: null,
       categoryDescription: null,
+      categoryCover: null,
       isDescending: false,
     }
   },
@@ -124,7 +127,6 @@ export default {
     Navbar,
     Sidebar,
     Searchbar,
-    SwiperComponent,
     Quote,
     RecentArticle,
     ArticleList,
@@ -202,6 +204,7 @@ export default {
 
     this.categoryName = currentCategory[0].text
     this.categoryDescription = currentCategory[0].description
+    this.categoryCover = currentCategory[0].cover
 
     this.articleList = this.$site.pages
       .filter(p => {

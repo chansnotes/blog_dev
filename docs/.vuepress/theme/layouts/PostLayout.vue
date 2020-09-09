@@ -33,7 +33,7 @@
       />
     </div>
     <Content
-      class="markdown mx-auto mt-20 mb-0 px-4 lg:px-0 pb-12 max-w-full md:max-w-postwidth text-base md:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
+      class="markdown mx-auto mt-20 mb-0 px-4 lg:px-0 pb-12 max-w-full md:max-w-postwidth text-sm md:text-base lg:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
     />
     <div
       class="mx-auto mt-8 px-4 lg:px-0 max-w-full md:max-w-postwidth object-fill"
@@ -97,7 +97,6 @@
 import Navbar from '../components/Nav/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Searchbar from '../components/Nav/Searchbar'
-import SwiperComponent from '../components/Carousel/Swiper'
 import Quote from '../components/Quote/Quote'
 import RecentArticle from '../components/RecentArticle/RecentArticle'
 import ArticleList from '../components/ArticleList/ArticleList'
@@ -120,7 +119,6 @@ export default {
     Navbar,
     Sidebar,
     Searchbar,
-    SwiperComponent,
     Quote,
     RecentArticle,
     ArticleList,
