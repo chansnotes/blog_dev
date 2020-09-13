@@ -10,11 +10,21 @@ permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-06-07
 date: 2019-06-07
 excerpt: 'Vue의 컴포넌트끼리 데이터를 주고 받는 방식인 Props와 Emit에 대해 정리하는 글입니다.'
+sitemap:
+  changefreq: daily
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (8) 컴포넌트 커뮤니케이션 - Props와 Emit'
+  - name: 'og:description'
+    content: 'Vue의 컴포넌트끼리 데이터를 주고 받는 방식인 Props와 Emit에 대해 정리하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 
@@ -37,7 +47,7 @@ Vue 어플리케이션을 만들다보면 컴포넌트들을 많이 생겨납니
 
 ## Props와 Emit 설명
 
-![Props 1](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_tutorial/vue_props1.jpeg?raw=true){: .align-center}
+![Props 1](https://chansnotes.github.io/images/vue/vue_props1.jpeg)
 
 ### Props
 
@@ -323,7 +333,7 @@ props: {
 
 ## 비 부모 - 자식간의 통신은? (내용 보충 필요..)
 
-![Props 2](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_tutorial/vue_props2.jpeg?raw=true){: .align-center}
+![Props 2](https://chansnotes.github.io/images/vue/vue_props1.jpeg)
 
 - 부모 컴포넌트에 정의되지 않은 자식 컴포넌트들 간에 데이터 객체를 전달 할 수 있음
 - 아무것도 정의하지 않은 (비어있는) Vue 인스턴스를 **이벤트 버스** 로 사용

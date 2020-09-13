@@ -1,21 +1,30 @@
 ---
 layout: PostLayout
 title: '[Vue-Router] (1) 기본 사용법'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/logo.jpeg'
 read_time: true
 comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-13
 date: 2019-07-13
+excerpt: 'Vue router 기본 사용법, 동적 라우트, 중첩 라우트, 리다이렉트 방법에 대해 설명합니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue router 기본 사용법, 동적 라우트, 중첩 라우트, 리다이렉트 방법에 대해 설명합니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: '[Vue-Router] (1) 기본 사용법'
+  - name: 'og:description'
+    content: 'Vue router 기본 사용법, 동적 라우트, 중첩 라우트, 리다이렉트 방법에 대해 설명합니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> ### Vue Router 공식문서를 참조하여 정리하였습니다.
+> Vue Router 공식문서를 참조하여 정리하였습니다.
 
 ---
 

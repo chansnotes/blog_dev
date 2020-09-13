@@ -1,21 +1,30 @@
 ---
 layout: PostLayout
 title: '[Vuex 뽀개기] (2) Vuex 모듈화하기'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/logo.jpeg'
 read_time: true
 comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-13
 date: 2019-07-13
+excerpt: 'Vuex를 모듈화해서 사용하는 방법을 정리합니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vuex를 모듈화해서 사용하는 방법을 정리합니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: '[Vuex 뽀개기] (2) Vuex 모듈화하기'
+  - name: 'og:description'
+    content: 'Vuex를 모듈화해서 사용하는 방법을 정리합니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> ### Vuex 공식문서를 참조하여 정리하였습니다.
+> Vuex 공식문서를 참조하여 정리하였습니다.
 
 ---
 

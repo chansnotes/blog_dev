@@ -10,11 +10,21 @@ permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-05-12
 date: 2019-05-12
 excerpt: 'Vue 템플릿에 CSS 스타일을 적용하는 방법에 대해 알아봅니다.'
+sitemap:
+  changefreq: daily
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (6) CSS 스타일 넣기'
+  - name: 'og:description'
+    content: 'Vue 템플릿에 CSS 스타일을 적용하는 방법에 대해 알아봅니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 

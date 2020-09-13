@@ -10,11 +10,21 @@ permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-05-11
 date: 2019-05-11
 excerpt: 'Vue 인스턴스의 핵심 속성인 computed와 watch에 대한 정리글입니다.'
+sitemap:
+  changefreq: daily
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (5) Computed와 Watch 속성'
+  - name: 'og:description'
+    content: 'Vue 인스턴스의 핵심 속성인 computed와 watch에 대한 정리글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 

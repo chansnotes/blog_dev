@@ -55,8 +55,22 @@
           </div>
         </div>
       </article>
-      <div v-if="isLoading" class="flex justify-center items-center">
-        <Loader :size="24" :color="'red'" :intensity="300" />
+      <div v-if="isLoading" class="flex flex-col justify-center items-center">
+        <Loader :size="16" :color="'red'" :intensity="300" />
+        <button
+          @click="manualLoad"
+          class="flex inline-block w-full h-12 items-center justify-center mt-4 text-xs md:text-sm text-gray-600 cursor-pointer"
+        >
+          더보기<svg
+            class="w-4 h-4 ml-1 fill-current text-gray-600"
+            viewBox="0 0 21 21"
+          >
+            <path
+              d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
     <!-- Sidebar Container -->
@@ -293,6 +307,25 @@ export default {
           return 0
         })
       this.sortedList = this.sortedListFull.slice(0, 10)
+    },
+    manualLoad() {
+      if (this.currentPage < this.totalPages) {
+        if (this.currentCategory) {
+          this.currentPage += 1
+          const _this = this
+          setTimeout(function() {
+            const endNum = 10 * _this.currentPage
+            _this.sortedList = _this.sortedListFull.slice(0, endNum)
+          }, 800)
+        } else {
+          this.currentPage += 1
+          const _this = this
+          setTimeout(function() {
+            const endNum = 10 * _this.currentPage
+            _this.sortedList = _this.fullList.slice(0, endNum)
+          }, 800)
+        }
+      }
     },
     scroll() {
       window.onscroll = () => {

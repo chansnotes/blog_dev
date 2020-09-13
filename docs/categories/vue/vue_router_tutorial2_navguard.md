@@ -1,21 +1,30 @@
 ---
 layout: PostLayout
 title: '[Vue-Router] (2) 네비게이션 가드와 기타 기능들'
+topic: 'coding'
 category: vue
 read_time: true
 comments: true
+thumbnail: '/images/vue/logo.jpeg'
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-21
 date: 2019-07-21
+excerpt: 'Vue router에서 라우트를 보호해주는 네비게이션 가드를 정리하는 글입니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue router에서 라우트를 보호해주는 네비게이션 가드를 정리하는 글입니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: '[Vue-Router] (2) 네비게이션 가드와 기타 기능들'
+  - name: 'og:description'
+    content: 'Vue router에서 라우트를 보호해주는 네비게이션 가드를 정리하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> ### Vue Router 공식문서를 참조하여 정리하였습니다.
+> Vue Router 공식문서를 참조하여 정리하였습니다.
 
 ---
 

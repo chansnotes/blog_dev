@@ -1,20 +1,30 @@
 ---
 layout: PostLayout 
-title: "[VueTips] this와 Arrow 함수"
+title: "Vue에서 this is undefined 에러가 발생하는 이유"
+topic: 'coding'
 category: vue
 read_time: true
 comments: true
+thumbnail: '/images/vue/logo.jpeg'
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-09-02
 date: 2019-09-02
-sitemap:
-    changefreq: daily
-    priority: 1.0
 excerpt: "Vue.js를 코딩하다가 알게된 사소한 팁들을 공유하는 글입니다. 본 글에서는 Vue 인스턴스에서 계속해서 사용하게 되는 this의 스코프가 어떻게 설정되고,
 왜 Arrow 함수를 써야만 하는지를 설명합니다."
+sitemap:
+  changefreq: daily
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue에서 this is undefined 에러가 발생하는 이유'
+  - name: 'og:description'
+    content: 'Vue.js를 코딩하다가 알게된 사소한 팁들을 공유하는 글입니다. 본 글에서는 Vue 인스턴스에서 계속해서 사용하게 되는 this의 스코프가 어떻게 설정되고,
+왜 Arrow 함수를 써야만 하는지를 설명합니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
-
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
 
 > 본 글은 [Michael Thiessen의 개인 블로그](https://michaelnthiessen.com/this-is-undefined/)와 [Stack Overflow](https://stackoverflow.com/questions/49417410/how-to-save-reference-to-this-in-vue-component)에서 정보를 얻어 작성하였습니다.
 

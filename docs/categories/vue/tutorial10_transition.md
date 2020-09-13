@@ -9,15 +9,22 @@ comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-06-10
 date: 2019-06-10
+excerpt: 'Vue에서는 어떻게 트랜지션과 애니메이션 효과를 구현하는지 정리하는 글입니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue에서는 어떻게 트랜지션과 애니메이션 효과를 구현하는지 정리하는 글입니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (10) 트랜지션과 애니메이션 적용하기'
+  - name: 'og:description'
+    content: 'Vue에서는 어떻게 트랜지션과 애니메이션 효과를 구현하는지 정리하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 
@@ -51,7 +58,7 @@ Vue에서도 CSS 트랜지션 및 애니메이션을 구현할 수 있습니다.
 
 - 진입 및 진출 트랜지션에는 총 6가지 클래스가 존재
 
-![transition_class](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_tutorial/vue_transition.png?raw=true){: .align-center}
+![transition_class](https://chansnotes.github.io/images/vue/vue_transition.png)
 
 1. `v-enter`
 2. `v-enter-active`

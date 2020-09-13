@@ -267,7 +267,6 @@ module.exports = {
           },
         },
       },
-
       img: {
         maxWidth: '100%',
         margin: '3rem auto',

@@ -1,21 +1,30 @@
 ---
 layout: PostLayout
 title: '[Vuex 뽀개기] (1) State, Getter, Mutation, 그리고 Action'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/logo.jpeg'
 read_time: true
 comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-03
 date: 2019-06-25
+excerpt: 'Vue의 복잡한 상태 관리를 간편하게 만들어주는 Vuex 라이브러리가 무엇이고, 어떻게 사용해야하는지에 대해 정리하는 글입니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue의 복잡한 상태 관리를 간편하게 만들어주는 Vuex 라이브러리가 무엇이고, 어떻게 사용해야하는지에 대해 정리하는 글입니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: '[Vuex 뽀개기] (1) State, Getter, Mutation, 그리고 Action'
+  - name: 'og:description'
+    content: 'Vue의 복잡한 상태 관리를 간편하게 만들어주는 Vuex 라이브러리가 무엇이고, 어떻게 사용해야하는지에 대해 정리하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> ### Vuex 공식문서를 참조하여 정리하였습니다.
+> Vuex 공식문서를 참조하여 정리하였습니다.
 
 ---
 

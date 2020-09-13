@@ -9,15 +9,22 @@ comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-06-09
 date: 2019-06-09
+excerpt: 'Vue의 컴포넌트를 재사용하게 도와주는 슬롯 엘리먼트에 대해 요약하는 글입니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue의 컴포넌트를 재사용하게 도와주는 슬롯 엘리먼트에 대해 요약하는 글입니다.'
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (9) 컴포넌트 재사용 - 슬롯'
+  - name: 'og:description'
+    content: 'Vue의 컴포넌트를 재사용하게 도와주는 슬롯 엘리먼트에 대해 요약하는 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-![Vue Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 
@@ -42,7 +49,7 @@ Vue에서는 Slot (슬롯) 이라는 기능을 제공하여, slot안의 콘텐�
 
 ## Slot 사용법
 
-![slot](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_tutorial/vue_slot.jpeg?raw=true){: .align-center}
+![slot](https://chansnotes.github.io/images/vue/vue_slot.jpeg)
 
 - 자식 컴포넌트에 정의하게 되는 slot을 통해, 부모 컴포넌트에서 slot 부분을 변경하여 사용 가능
 - Slot 부분을 부모 컴포넌트에서 정의 안하면, 자식 컴포넌트에 작성된 컨텐츠를 기본으로 사용

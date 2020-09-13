@@ -9,14 +9,26 @@ comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-04-30
 date: 2019-04-30
+sitemap:
+  changefreq: daily
+  exclude: false
 excerpt: 'Vue 개발환경 설정하는 법에 대해 정리한 글입니다.'
+meta:
+  - name: 'og:title'
+    content: 'Vue.js 뽀개기 (1) 개발환경 설정'
+  - name: 'og:description'
+    content: 'Vue 개발환경 설정하는 법에 대해 정리한 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/logo.jpeg'
 ---
 
-> #### 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
+> 본 글은 Udemy에서 제공하는 유료 강좌인 Vue.js Complete Guide를 수강하면서 정리한 내용입니다. 저작권 문제시 바로 글을 내리도록 하겠습니다.
 
 ---
 
-** 저는 애기 개발자 입니다.** 이전까지 웹 프론트엔드 개발이라고는 약 4년전 석사과정 프로젝트에서 jQuery, Boostrap, 그리고 D3를 사용해서 BeagleBone Black이라는 마이크로컴퓨터에 Web App을 만들어 본 경험이 전부입니다... 따라서, 글 내용에서 잘못된 정보들은 지적해주시면 바로 수정하도록 하겠습니다!
+**저는 애기 개발자 입니다.** 이전까지 웹 프론트엔드 개발이라고는 약 4년전 석사과정 프로젝트에서 jQuery, Boostrap, 그리고 D3를 사용해서 BeagleBone Black이라는 마이크로컴퓨터에 Web App을 만들어 본 경험이 전부입니다... 따라서, 글 내용에서 잘못된 정보들은 지적해주시면 바로 수정하도록 하겠습니다!
 
 최근 개인적으로 만들어보고 싶은 웹 앱이 있어 웹 프레임워크들에 대해 공부하기 시작했습니다. 2019년 현재 사용자 인터페이스를 구축하도록 도와주는 JavaScript 기반의 웹 프레임워크들은 대표적으로 Angular, React, 그리고 Vue 이렇게 세가지가 존재합니다.
 

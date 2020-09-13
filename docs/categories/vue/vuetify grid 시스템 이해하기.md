@@ -1,20 +1,27 @@
 ---
 layout: PostLayout
 title: '[Vuetify] (1) Grid 시스템 이해하기'
+topic: 'coding'
 category: vue
+thumbnail: '/images/vue/vuetify.png'
 read_time: true
 comments: true
 permalink: /:year/:month/:day/:slug
 last_modified_at: 2019-07-27
 date: 2019-07-27
+excerpt: 'Vue의 UI를 예쁘게 꾸며주도록 도와주는 구글의 Material Design 기반의 UI 컴포넌트 라이브러리인 Vuetify의 Grid 시스템에 대해 정리합니다.'
 sitemap:
   changefreq: daily
-  priority: 1.0
-excerpt: 'Vue의 UI를 예쁘게 꾸며주도록 도와주는 구글의 Material Design 기반의 UI 컴포넌트 라이브러리인 Vuetify의 Grid 시스템에 대해 정리합니다.'
----
-
-![Vuetify Logo](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vue_logo.jpeg?raw=true){: .align-center}
-
+  exclude: false
+meta:
+  - name: 'og:title'
+    content: '[Vuetify] (1) Grid 시스템 이해하기'
+  - name: 'og:description'
+    content: 'Vue의 UI를 예쁘게 꾸며주도록 도와주는 구글의 Material Design 기반의 UI 컴포넌트 라이브러리인 Vuetify의 Grid 시스템에 대해 정리합니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/vue/vuetify.png'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/vue/vuetify.png'
 ---
 
 Vuetify는 부트스트랩과 마찬가지로 12 포인트의 Grid 시스템으로 이루어져있음.
@@ -26,7 +33,7 @@ Vuetify에서 Grid system은 먼저 `v-container`로 컨텐츠를 담을 컨테�
 
 순서: `v-container` >> `v-layout` >> `v-flex` (>> `v-card`)
 
-![Vuetify Grid](https://github.com/chansbro/chansbro.github.io/blob/master/assets/images/vuetify/grid.png?raw=true){: .align-center}
+![Vuetify Grid](https://chansnotes.github.io/images/vue/grid.png)
 
 ---
 
