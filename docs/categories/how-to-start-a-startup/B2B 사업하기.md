@@ -1,20 +1,29 @@
 ---
 layout: PostLayout
-title: '[스탠포드대학 창업강의]- B2B 사업하기'
+title: 'B2B 사업하기'
 topic: '사업/비즈니스'
 category: '스탠포드 스타트업 강의'
-thumbnail: '/images/thumbnail/nanopore.jpg'
+thumbnail: '/images/thumbnail/startup.png'
 read_time: true
 comments: true
 last_modified_at: 2019-09-30
 date: 2019-09-30
+excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 12번째 강의를 요약정리한 글입니다.'
 sitemap:
   changefreq: daily
   exclude: false
-excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 12번째 강의를 요약정리한 글입니다.'
+meta:
+  - name: 'og:title'
+    content: 'B2B 사업하기'
+  - name: 'og:description'
+    content: '스탠포드대학에서 진행하였던 How to start a startup의 12번째 강의를 요약정리한 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/thumbnail/startup.png'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/thumbnail/startup.png'
 ---
 
-> #### Standford 대학의 "How to start a startup" 강의를 팟캐스트에서 듣고 정리하며 개인적인 생각도 한 스푼 추가된 내용입니다.
+> Standford 대학의 "How to start a startup" 강의를 팟캐스트에서 듣고 정리하며 개인적인 생각도 한 스푼 추가된 내용입니다.
 
 ---
 
@@ -44,7 +53,7 @@ Aaron이 언급하는 포인트들을 면밀히 들여다보면, 다른 분야�
 
 ### Aaron Levie
 
-![img](https://s.marketwatch.com/public/resources/images/MW-FN544_Box053_ZH_20170531175622.jpg){: .align-center}
+![img](https://s.marketwatch.com/public/resources/images/MW-FN544_Box053_ZH_20170531175622.jpg)
 
 - 기업용 클라우드 드라이브 솔루션 업체인 Box의 공동창립자이자 현 CEO
 - 친구인 Dylan Smith와 함께 창업을 하려고 대학을 중퇴 \* 여담으로 Dylan은 창업 당시 외모가 중학생 같아서, 투자자들이 투자를 꺼려했다는 썰~

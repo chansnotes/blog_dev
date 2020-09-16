@@ -1,20 +1,29 @@
 ---
 layout: PostLayout
-title: '[스탠포드대학 창업강의]- 실행하기, 작게 일하기 , PR하기'
+title: '실행하기, 작게 일하기 , PR하기'
 topic: '사업/비즈니스'
 category: '스탠포드 스타트업 강의'
-thumbnail: '/images/thumbnail/nanopore.jpg'
+thumbnail: '/images/thumbnail/startup.png'
 read_time: true
 comments: true
 last_modified_at: 2019-08-07
 date: 2019-08-07
+excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 8번째 강의를 요약정리한 글입니다.'
 sitemap:
   changefreq: daily
   exclude: false
-excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 8번째 강의를 요약정리한 글입니다.'
+meta:
+  - name: 'og:title'
+    content: '실행하기, 작게 일하기 , PR하기'
+  - name: 'og:description'
+    content: '스탠포드대학에서 진행하였던 How to start a startup의 8번째 강의를 요약정리한 글입니다.'
+  - name: 'og:image'
+    content: 'https://chansnotes.github.io/images/thumbnail/startup.png'
+  - name: 'og:url'
+    content: 'https://chansnotes.github.io/images/thumbnail/startup.png'
 ---
 
-> #### Standford 대학의 "How to start a startup" 강의를 팟캐스트에서 듣고 정리하며 개인적인 생각도 한 스푼 추가된 내용입니다.
+> Standford 대학의 "How to start a startup" 강의를 팟캐스트에서 듣고 정리하며 개인적인 생각도 한 스푼 추가된 내용입니다.
 
 ---
 
@@ -32,7 +41,7 @@ excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 8�
 
 ## Speaker 소개 - Stanley Tang
 
-![img](https://pbs.twimg.com/profile_images/493939910412222464/AhSxeXjs_400x400.jpeg){: .align-center}
+![img](https://pbs.twimg.com/profile_images/493939910412222464/AhSxeXjs_400x400.jpeg)
 
 - 현 Doordash의 창립자 \* 배달의 민족이랑 비슷한 음식 배달과 관련된 로지스틱 서비스 회사
 
@@ -59,7 +68,7 @@ excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 8�
 
 ## Speaker 소개 - Walker Williams
 
-![img](https://www.yosuccess.com/wp-content/uploads/2016/03/Walker-Williams.jpg){: .align-center}
+![img](https://www.yosuccess.com/wp-content/uploads/2016/03/Walker-Williams.jpg)
 
 - Teespring 창립자 \* 주문제작 티셔츠를 판매하는 플랫폼 회사
 
@@ -99,7 +108,7 @@ excerpt: '스탠포드대학에서 진행하였던 How to start a startup의 8�
 
 ## Speaker 소개 - Justin Kan
 
-![img](https://torch.io/wp-content/uploads/2018/06/justin-kan.jpg){: .align-center}
+![img](https://torch.io/wp-content/uploads/2018/06/justin-kan.jpg)
 
 - 트위치TV의 창립자
 - 법률 관련 기술회사인 Atrium의 공동 창립자

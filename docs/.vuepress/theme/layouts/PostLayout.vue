@@ -33,7 +33,7 @@
       />
     </div>
     <Content
-      class="markdown mx-auto mt-20 mb-0 px-4 lg:px-0 pb-12 max-w-full md:max-w-postwidth text-sm md:text-base lg:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
+      class="markdown mx-auto mt-8 mb-0 px-4 lg:px-0 pb-12 max-w-full md:max-w-postwidth text-sm md:text-base lg:text-lg text-post tracking-postlayout break-words wordbreaking leading-extra-relaxed"
     />
     <div
       class="mx-auto mt-8 px-4 lg:px-0 max-w-full md:max-w-postwidth object-fill"

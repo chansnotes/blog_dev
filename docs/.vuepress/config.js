@@ -124,18 +124,18 @@ module.exports = {
         topic: '코딩/IoT',
         description:
           'Udemy 강의와 여러 문서들을 읽고 공부한 내용을 공유합니다.',
-        thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        thumbnail: '/images/vue/logo.jpeg',
         cover: '/images/cover/coding.jpg',
       },
-      {
-        text: 'vueRTC',
-        link: '/categories/vueRTC/',
-        topic: '코딩/IoT',
-        description:
-          '미니 프로젝트로 만든 IoT 장치에 적용하기 위해 공부했었던 webRTC를 Vue에 접목시키면서 공부했던 내용을 공유합니다.',
-        thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
-        cover: '/images/cover/coding.jpg',
-      },
+      // {
+      //   text: 'vueRTC',
+      //   link: '/categories/vueRTC/',
+      //   topic: '코딩/IoT',
+      //   description:
+      //     '미니 프로젝트로 만든 IoT 장치에 적용하기 위해 공부했었던 webRTC를 Vue에 접목시키면서 공부했던 내용을 공유합니다.',
+      //   thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+      //   cover: '/images/cover/coding.jpg',
+      // },
       {
         text: 'vueTailwind',
         link: '/categories/vueTailwind/',
@@ -163,7 +163,7 @@ module.exports = {
         topic: '사업/비즈니스',
         description:
           'Stanford 대학교에서 진행한 <How to start a startup> 강의를 듣고 내용을 정리합니다.',
-        thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
+        thumbnail: '/images/thumbnail/startup.png',
         cover: '/images/cover/startup.jpg',
       },
       {
@@ -174,6 +174,15 @@ module.exports = {
           '부린이(부동산+어린이)를 탈출하기 위해, 공부한 지식들을 정리하여 공유합니다.',
         thumbnail: '/images/thumbnail/real-estate.jpeg',
         cover: '/images/cover/finance.jpeg',
+      },
+      {
+        text: 'HBR 팟캐스트 정리',
+        link: '/categories/hbr/',
+        topic: '사업/비즈니스',
+        description:
+          '하버드 비즈니스 리뷰에서 진행하는 HBR Ideacast를 내 맘대로 골라 듣고 내용을 정리합니다.',
+        thumbnail: '/images/thumbnail/hbr.jpeg',
+        cover: '/images/cover/startup.jpeg',
       },
       // {
       //   text: '회고록',
