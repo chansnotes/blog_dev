@@ -143,6 +143,13 @@ module.exports = {
         thumbnail: '/images/thumbnail/thumbnail_vuetailwind.jpeg',
         cover: '/images/cover/coding.jpg',
       },
+      {
+        text: 'vuePress',
+        link: '/categories/vuePress/',
+        topic: '코딩/IoT',
+        thumbnail: '/images/thumbnail/vuepress.png',
+        cover: '/images/cover/coding.jpg',
+      },
       // {
       //   text: 'HBR',
       //   link: '/categories/harvard-business-review',

@@ -39,17 +39,14 @@
               alt="thumbnail"
             />
           </div>
-          <div
-            class="flex flex-col ml-2 items-start justify-start title-ellipsis"
-          >
+          <div class="flex flex-col w-3/4 ml-2 items-start justify-start">
             <span class="text-xs opacity-excerpt">
               {{ article.frontmatter.category }}</span
             >
-            <p>{{ article.frontmatter.title }}</p>
-            <span class="my-auto text-sm opacity-excerpt"
-              >{{ formatDate(article.frontmatter.date) }} &#183;{{
-                article.readingTime.text
-              }}</span
+            <p class="title-ellipsis">{{ article.frontmatter.title }}</p>
+            <span class="my-auto text-xs sm:text-sm opacity-excerpt"
+              >{{ formatDate(article.frontmatter.date) }} &#183;
+              {{ article.readingTime.text }}</span
             >
           </div>
         </a>
@@ -135,6 +132,13 @@ export default {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.title-ellipsis-xs {
+  max-width: 180px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 </style>
