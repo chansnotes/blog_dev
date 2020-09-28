@@ -86,6 +86,7 @@ module.exports = {
         content: '/assets/favicons/browserconfig.xml',
       },
     ],
+    ['script', { src: 'https://developers.kakao.com/sdk/js/kakao.js' }],
   ],
 
   /**
@@ -109,12 +110,12 @@ module.exports = {
         link: '/',
       },
       {
-        text: 'Categories',
-        link: '/categories/',
-      },
-      {
         text: 'About',
         link: '/about/',
+      },
+      {
+        text: 'Categories',
+        link: '/categories/',
       },
     ],
     categories: [
