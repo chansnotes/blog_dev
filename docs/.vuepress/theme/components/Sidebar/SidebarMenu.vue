@@ -6,7 +6,7 @@
           :to="item.link"
           v-for="item in $site.themeConfig.nav"
           :key="item.text"
-          class="p-2 text-sm hover:bg-gray-200"
+          class="p-2 text-sm hover:bg-gray-200 hover:text-blue-500"
         >
           {{ item.text }}
         </router-link>
@@ -15,9 +15,9 @@
             v-for="category in categoryList"
             :href="category.link"
             :key="category.text"
-            class="p-2 text-sm hover:bg-gray-200"
+            class="p-2 text-sm hover:bg-gray-200 hover:text-blue-500"
           >
-            {{ category.text }}</a
+            &#9654; {{ category.text }}</a
           >
         </ul>
       </ul>
