@@ -190,7 +190,7 @@ module.exports = {
         description:
           '하버드 비즈니스 리뷰에서 진행하는 HBR Ideacast를 내 맘대로 골라 듣고 내용을 정리합니다.',
         thumbnail: '/images/thumbnail/hbr.jpeg',
-        cover: '/images/cover/startup.jpeg',
+        cover: '/images/cover/hbr_cover.jpeg',
       },
       // {
       //   text: '회고록',
